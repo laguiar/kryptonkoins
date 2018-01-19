@@ -1,11 +1,11 @@
 package com.kryptonkoins
 
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 
 @SpringBootApplication
 class KryptonKoinsApplication
 
 fun main(args: Array<String>) {
-    SpringApplication.run(KryptonKoinsApplication::class.java, *args)
+    runApplication<KryptonKoinsApplication>(*args)
 }
