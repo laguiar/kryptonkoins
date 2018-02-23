@@ -2,7 +2,7 @@
 
 Krypton Koins is a multi cryptocurrencies portfolio monitor.
 
-It's just a POC project to be a playground for *Kotlin* and the new Spring 5 features.
+It's just a POC project to be a playground for **Kotlin** and the new Spring 5 features.
 
 ## Setup
 - Spring Boot 2 with Webflux and functional routing
