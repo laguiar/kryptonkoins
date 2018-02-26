@@ -2,8 +2,7 @@ package com.kryptonkoins.web
 
 import com.kryptonkoins.domain.sellIt
 import com.kryptonkoins.repository.KryptonRepository
-import com.kryptonkoins.web.dto.BuyDTO
-import com.kryptonkoins.web.dto.SellDTO
+import com.kryptonkoins.web.dto.KryptonDTO
 import com.kryptonkoins.web.dto.toKrypton
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest
@@ -23,7 +22,7 @@ class KryptonHandler(val repository: KryptonRepository) {
         .switchIfEmpty(notFound().build())
 
     fun buy(req: ServerRequest): Mono<ServerResponse> {
-        return req.bodyToMono<BuyDTO>()
+        return req.bodyToMono<KryptonDTO>()
             .map { it.toKrypton() }
             .flatMap { ok().body(repository.save(it)) }
             .switchIfEmpty(badRequest().build())
@@ -32,7 +31,7 @@ class KryptonHandler(val repository: KryptonRepository) {
     fun sell(req: ServerRequest): Mono<ServerResponse> {
         return repository.findById(UUID.fromString(req.pathVariable("id")))
             .map { krypton ->
-                req.bodyToMono<SellDTO>().map(krypton::sellIt)
+                req.bodyToMono<KryptonDTO>().map(krypton::sellIt)
             }
             .doOnNext { repository.saveAll(it) }
             .then(noContent().build())

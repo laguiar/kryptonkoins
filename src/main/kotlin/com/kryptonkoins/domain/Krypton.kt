@@ -1,6 +1,6 @@
 package com.kryptonkoins.domain
 
-import com.kryptonkoins.web.dto.SellDTO
+import com.kryptonkoins.web.dto.KryptonDTO
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigDecimal
@@ -18,7 +18,7 @@ data class Krypton(
     val sellFees: BigDecimal = BigDecimal.ZERO
 )
 
-fun Krypton.sellIt(dto: SellDTO): Krypton = this.copy(
+fun Krypton.sellIt(dto: KryptonDTO): Krypton = this.copy(
     shares = this.shares.minus(dto.shares),
     sell = dto.price,
     sellFees = dto.fees
