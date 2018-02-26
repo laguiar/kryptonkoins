@@ -12,6 +12,7 @@ It's just a POC project to be a playground for **Kotlin** and the new Spring 5 f
 ## Todo
 - [x] Initial project setup
 - [x] Functional routing and handlers _(partially)_
+- [ ] Dockerize app + mongodb for local development
 - [ ] WebClient tests
 - [ ] Shows gains/losses per Krypton
 - [ ] Integration with Coinbase api or any other provider _(delayed data)_
