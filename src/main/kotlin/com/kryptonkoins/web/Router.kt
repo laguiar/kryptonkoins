@@ -1,6 +1,5 @@
-package com.kryptonkoins.web.routing
+package com.kryptonkoins.web
 
-import com.kryptonkoins.web.handler.KryptonHandler
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.reactive.function.server.router

@@ -1,4 +1,4 @@
-package com.kryptonkoins.web.handler
+package com.kryptonkoins.web
 
 import com.kryptonkoins.domain.sellIt
 import com.kryptonkoins.repository.KryptonRepository
