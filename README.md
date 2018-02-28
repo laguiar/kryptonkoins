@@ -2,7 +2,9 @@
 
 Krypton Koins is a multi cryptocurrencies portfolio monitor.
 
-It's just a POC project to be a playground for **Kotlin** and the new Spring 5 features.
+The idea is to have an app that you can use locally to monitor your tokens.
+
+It's just a _pet project_ to be a playground for **Kotlin** and the new Spring 5 features.
 
 ## Setup
 - Spring Boot 2 with Webflux and functional routing
@@ -12,9 +14,9 @@ It's just a POC project to be a playground for **Kotlin** and the new Spring 5 f
 ## Todo
 - [x] Initial project setup
 - [x] Functional routing and handlers _(partially)_
-- [ ] Dockerize app + mongodb for local development
+- [ ] Dockerize app + mongodb for local development/use
 - [ ] WebClient tests
-- [ ] Shows gains/losses per Krypton
-- [ ] Integration with Coinbase api or any other provider _(delayed data)_
-- [ ] Authentication
+- [ ] Show portfolio with gains/losses per Krypton and overall situation
+- [ ] Integration with Coinbase/Gdax/Bitfinex api _(delayed data)_
 - [ ] Web UI
+- [ ] Authentication _(maybe)_
