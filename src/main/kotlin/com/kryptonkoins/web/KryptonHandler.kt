@@ -11,12 +11,11 @@ import org.springframework.web.reactive.function.server.ServerResponse.*
 import org.springframework.web.reactive.function.server.body
 import org.springframework.web.reactive.function.server.bodyToMono
 import reactor.core.publisher.Mono
+import java.math.BigDecimal
 import java.util.*
 
 @Component
 class KryptonHandler(val repository: KryptonRepository) {
-
-    fun list(req: ServerRequest) = ok().body(repository.findAll())
 
     fun get(req: ServerRequest) = ok().body(repository.findById(UUID.fromString(req.pathVariable("id"))))
         .switchIfEmpty(notFound().build())
@@ -38,4 +37,7 @@ class KryptonHandler(val repository: KryptonRepository) {
             .switchIfEmpty(notFound().build())
     }
 
+    fun portfolio(req: ServerRequest) = ok().body(repository.findAll()
+        .filter { it.shares.compareTo(BigDecimal.ZERO) > 0 }
+    )
 }

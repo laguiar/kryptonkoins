@@ -11,10 +11,10 @@ class Router {
     fun routerFunction(handler: KryptonHandler) = router {
 
         ("/kryptons").nest {
-            GET("/", handler::list)
             GET("/{id}", handler::get)
             POST("/buy", handler::buy)
             POST("/sell/{id}", handler::sell)
         }
+        GET("/portfolio", handler::portfolio)
     }
 }

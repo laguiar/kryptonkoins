@@ -11,7 +11,7 @@ data class KryptonDTO(
     @NotNull val koin: Koin,
     @NotNull val shares: BigDecimal,
     @NotNull val price: BigDecimal,
-    val fees: BigDecimal = BigDecimal("0.0000000000")
+    val fees: BigDecimal = BigDecimal.ZERO
 )
 
 fun KryptonDTO.toKrypton(): Krypton = Krypton(
@@ -19,4 +19,9 @@ fun KryptonDTO.toKrypton(): Krypton = Krypton(
     shares = this.shares,
     buy = this.price,
     buyFees = this.fees
+)
+
+data class Portfolio(
+    val overall: Double = 0.0,
+    val balance: BigDecimal = BigDecimal.ZERO
 )
