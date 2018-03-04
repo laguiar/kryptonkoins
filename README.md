@@ -1,5 +1,7 @@
 # ![Kotlin Spring](kotlin-spring.png)Krypton Koins
 
+[![Build Status](https://travis-ci.org/laguiar/kryptonkoins.svg?branch=master)](https://travis-ci.org/laguiar/kryptonkoins)
+
 Krypton Koins is a multi cryptocurrencies portfolio monitor.
 
 The idea is to have an app that you can use locally to monitor your tokens.
