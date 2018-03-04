@@ -16,8 +16,8 @@ It's just a _pet project_ to be a playground for **Kotlin** and the new Spring 5
 ## Todo
 - [x] Initial project setup
 - [x] Functional routing and handlers _(partially)_
+- [ ] WebClient tests _(in progress)_
 - [ ] Dockerize app + mongodb for local development/use
-- [ ] WebClient tests
 - [ ] Show portfolio with gains/losses per Krypton and overall situation
 - [ ] Integration with Coinbase/Gdax/Bitfinex api _(delayed data)_
 - [ ] Web UI
