@@ -53,4 +53,5 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
 	testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+	testCompile('org.junit.jupiter:junit-jupiter-engine:5.1.+')
 }
