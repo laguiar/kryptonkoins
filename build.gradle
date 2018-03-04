@@ -12,9 +12,13 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
 		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+		classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.2'
+        classpath 'net.saliman:gradle-cobertura-plugin:2.5.4'
 	}
 }
 
+apply plugin: 'cobertura'
+apply plugin: 'com.github.kt3k.coveralls'
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'idea'
@@ -36,6 +40,8 @@ compileTestKotlin {
 		jvmTarget = "1.8"
 	}
 }
+
+cobertura.coverageFormats = ['xml']
 
 repositories {
 	mavenCentral()

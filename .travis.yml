@@ -2,11 +2,8 @@ language: java
 jdk:
   - oraclejdk8
 
-cache:
-  directories:
-    - $HOME/.m2/repository/
-
 notifications:
   email: false
-#    on_success: never # default: change
-#    on_failure: always # default: always
+
+after_success:
+  - ./gradlew cobertura coveralls
