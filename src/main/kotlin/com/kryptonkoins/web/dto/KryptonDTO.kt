@@ -21,7 +21,19 @@ fun KryptonDTO.toKrypton(): Krypton = Krypton(
     buyFees = this.fees
 )
 
+data class Stock(
+    val koin: Koin,
+    val shares: BigDecimal,
+    val price: BigDecimal,
+    val fees: BigDecimal,
+    val market: BigDecimal,
+    val gain: BigDecimal,
+    val percent: Double
+)
+
 data class Portfolio(
-    val overall: Double = 0.0,
-    val balance: BigDecimal = BigDecimal.ZERO
+    val balance: BigDecimal,
+    val gains: BigDecimal,
+    val percent: Double,
+    val stocks: List<Stock>
 )
