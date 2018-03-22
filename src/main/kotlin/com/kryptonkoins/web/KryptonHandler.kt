@@ -44,15 +44,10 @@ class KryptonHandler(val repository: KryptonRepository) {
     fun portfolio(req: ServerRequest) = ok().body(toPortfolio(repository.findAll()))
 
     private fun toPortfolio(kryptons: Flux<Krypton>): Mono<Portfolio> {
-//        val stocks = mutableListOf<Stock>()
-//        kryptons.log()
-//            .map { toStock(it) }
-//            .doOnNext { stocks.add(it) }
-
-        // TODO - it wasn't able to work/test using a non-blocking way 😖
-        val stocks = kryptons.collectList()
-            .block()
-            ?.map(this::toStock)
+        val stocks = kryptons
+            .map(this::toStock)
+            .collectList()
+            .block() // TODO - I didn't manage to do it in a non-blocking way 😖
             .orEmpty()
 
         val balance = stocks.map { it.market }.reduce { acc, next -> acc.add(next) }
